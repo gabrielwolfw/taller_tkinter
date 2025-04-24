@@ -48,12 +48,12 @@ def mover_enemigo(canvas, frames, grid, pos, wall_pos, frame_idx=0, enemigo_id=N
 def main():
     root = tk.Tk()
     root.title("Taller Tkinter - Recursividad y Enemigos")
-    canvas = tk.Canvas(root, width=GRID_W*TILE_SIZE, height=GRID_H*TILE_SIZE)
+    canvas = tk.Canvas(root, width=GRID_W*TILE_SIZE, height=GRID_H*TILE_SIZE) #
     canvas.pack()
 
     # Cargar imágenes
     floor_img = cargar_imagen(os.path.join("floor", "floor_tiles.png"))
-    wall_img = cargar_imagen("wall_1.png")
+    # wall_img = cargar_imagen("wall_1.png")
     enemy_frames = []
     for i in range(5):
         ruta = os.path.join("charact", f"adventurer-run-0{i}.png")
@@ -64,7 +64,7 @@ def main():
 
     # Colocar una pared en (2,1)
     wall_pos = (2, 1)
-    poner_pared(canvas, wall_img, *wall_pos)
+    # poner_pared(canvas, wall_img, *wall_pos)
 
     # Animar enemigo que se mueve y se detiene ante la pared
     mover_enemigo(canvas, enemy_frames, (GRID_W, GRID_H), (0, 1), wall_pos)
